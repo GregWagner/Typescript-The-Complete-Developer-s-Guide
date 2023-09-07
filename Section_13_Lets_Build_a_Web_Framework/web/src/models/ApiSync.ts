@@ -4,7 +4,7 @@ interface HasId {
     id?: number;
 }
 
-export class Sync<T extends HasId> {
+export class ApiSync<T extends HasId> {
     constructor(public rootUrl: string) {
     }
 
@@ -19,7 +19,7 @@ export class Sync<T extends HasId> {
             return axios.put(`${this.rootUrl}/${id}`, data);
         } else {
             // create a new post
-            return axios.post('this.rootUrl', data);
+            return axios.post(this.rootUrl, data);
         }
     }
 }
